@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "./Headers.css";
 import SearchOutlinedIcon from "@material-ui/icons/SearchOutlined";
+import ShoppingBasketIcon from "@material-ui/icons/ShoppingBasket";
 
 function Headers() {
   return (
@@ -22,9 +23,38 @@ function Headers() {
         <SearchOutlinedIcon className="header_serchIcon" />
       </div>
       {/* sign in */}
-      {/* order */}
-      {/* prime */}
+
+      <div className="header_nav">
+        {/* 1 link */}
+        <Link to="/login" className="header_link">
+          <div className="header_option">
+            <span className="header_optionLineOne">Hello</span>
+            <span className="header_optionLineTwo">Sign in</span>
+          </div>
+        </Link>
+        {/* 2 link */}
+        <Link to="/" className="header_link">
+          <div className="header_option">
+            <span className="header_optionLineOne">Returns</span>
+            <span className="header_optionLineTwo">& Orders</span>
+          </div>
+        </Link>
+        {/* 3 link */}
+        <Link to="/" className="header_link">
+          <div className="header_option">
+            <span className="header_optionLineOne">Your</span>
+            <span className="header_optionLineTwo">Prime</span>
+          </div>
+        </Link>
+      </div>
+
       {/* Basket Icon with number */}
+      <Link to="/checkout" className="header_link">
+        <div className="header_optionBasket">
+          <ShoppingBasketIcon />
+          <samp className="header_optionLineTwo header_basketCount">0</samp>
+        </div>
+      </Link>
     </nav>
   );
 }

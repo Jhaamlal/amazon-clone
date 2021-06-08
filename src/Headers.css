@@ -9,6 +9,9 @@
     background-color: #131921;
     display: flex;
     align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
 }
 
 .header_serchIcon {
@@ -27,4 +30,41 @@
     padding: 10px;
     border: none;
     width: 100%;
+}
+
+.header_nav {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.header_option {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.header_link {
+    text-decoration: none;
+    color: white;
+}
+
+.header_optionLineOne {
+    font-size: 10px;
+}
+
+.header_optionLineTwo {
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.header_optionBasket {
+    display: flex;
+}
+
+.header_basketCount {
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 5px;
+    font-size: 15px;
 }
