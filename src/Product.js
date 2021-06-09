@@ -1,8 +1,24 @@
 import { Button } from "@material-ui/core";
-import React from "react";
+import React, { useDispatch } from "react";
 import "./Product.css";
+import { useStateValue } from "./StateProvider";
 
 function Product({ id, title, image, price, rating }) {
+  const [state, dispatch] = useStateValue();
+  const addToBasket = () => {
+    // add item to basket
+
+    dispatch({
+      type: "ADD_TO_BASKET",
+      item: {
+        id,
+        title,
+        image,
+        price,
+        rating,
+      },
+    });
+  };
   return (
     <div className="product">
       <div className="product_info">
@@ -21,7 +37,9 @@ function Product({ id, title, image, price, rating }) {
       </div>
 
       <img src={image} className="product_image" />
-      <Button variant="contained">Add To Basket</Button>
+      <Button variant="contained" onClick={addToBasket}>
+        Add To Basket
+      </Button>
     </div>
   );
 }
