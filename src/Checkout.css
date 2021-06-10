@@ -1,0 +1,30 @@
+.checkout_ad {
+    width: 100%;
+    height: 10%;
+    margin-bottom: 10px;
+    /* max-width: 1200px; */
+    /* height: 50%; */
+    /* object-fit: fill; */
+}
+
+.checkout {
+    /* display: flex; */
+    /* padding: 20px; */
+    background-color: white;
+    height: max-content;
+}
+
+.checkout_title {
+    width: 100%;
+    margin-right: 10px;
+    border-bottom: 1px solid lightgray;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 20px 10px 20px;
+}
+
+.checkout_right {
+    text-align: right;
+}
+
+.checkout_product {}

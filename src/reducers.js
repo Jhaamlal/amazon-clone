@@ -1,21 +1,53 @@
 export const initialState = {
-  basket: ["ram", "jam"],
+  basket: [
+    {
+      id: "1234",
+      title: "Papu",
+      price: 11.96,
+      rating: 5,
+      image:
+        "https://upload.wikimedia.org/wikipedia/commons/e/e5/Rahul_Gandhi.jpg",
+    },
+  ],
   user: null,
+};
+
+export const getBasketTotle = (basket) => {
+  return basket?.reduce((amount, item) => item.price + amount, 0);
 };
 
 const reducer = (state, action) => {
   console.log(action);
+  console.log(state.basket);
   switch (action.type) {
     case "ADD_TO_BASKET":
       // logic
-      return { ...state, basket: [...state.basket, action.item] };
+      return {
+        ...state,
+        basket: [...state.basket, action.item],
+      };
       break;
-    case "REMOVE_FROM_BASE":
-      // Cool
-      return { state };
+    case "REMOVE_FROM_BASKET":
+      let newBasket = [...state.basket];
+
+      const index = state.basket.findIndex(
+        (basketItem) => basketItem.id === action.id
+      );
+      console.log(index);
+      if (index >= 0) {
+        // Remove it
+        newBasket.splice(index, 1);
+        console.log(newBasket);
+      } else {
+        console.log("WARN.........ing");
+      }
+      return {
+        ...state,
+        basket: newBasket,
+      };
       break;
     default:
-      // toatl cool
+      // total cool
       return state;
   }
 };
