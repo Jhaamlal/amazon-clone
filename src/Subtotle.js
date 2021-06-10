@@ -5,7 +5,7 @@ import { useStateValue } from "./StateProvider";
 import "./Subtotle.css";
 
 function Subtotle() {
-  const [{ basket }, dispatch] = useStateValue();
+  const [{ basket }] = useStateValue();
   let price = getBasketTotle(basket);
   console.log(price);
 

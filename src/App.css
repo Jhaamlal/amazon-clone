@@ -6,4 +6,8 @@ Button {
     background-color: #F1C557 !important;
     border: 1px solid;
     border-color: yellow;
+    border-radius: 2px;
+    height: 30px;
+    margin-top: 10px;
+    width: 100%;
 }

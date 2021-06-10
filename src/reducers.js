@@ -1,14 +1,5 @@
 export const initialState = {
-  basket: [
-    {
-      id: "1234",
-      title: "Papu",
-      price: 11.96,
-      rating: 5,
-      image:
-        "https://upload.wikimedia.org/wikipedia/commons/e/e5/Rahul_Gandhi.jpg",
-    },
-  ],
+  basket: [],
   user: null,
 };
 
@@ -20,13 +11,17 @@ const reducer = (state, action) => {
   console.log(action);
   console.log(state.basket);
   switch (action.type) {
+    case "SET_USER":
+      return {
+        ...state,
+        user: action.user,
+      };
     case "ADD_TO_BASKET":
       // logic
       return {
         ...state,
         basket: [...state.basket, action.item],
       };
-      break;
     case "REMOVE_FROM_BASKET":
       let newBasket = [...state.basket];
 
@@ -45,7 +40,6 @@ const reducer = (state, action) => {
         ...state,
         basket: newBasket,
       };
-      break;
     default:
       // total cool
       return state;
